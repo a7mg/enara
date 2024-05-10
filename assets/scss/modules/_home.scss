@@ -23,7 +23,7 @@
 }
 .hero {
     position: relative;
-    padding: rem(150) 0 rem(50);
+    padding: rem(170) 0 rem(50);
 
     .hero-container {
         padding: rem(50);
@@ -36,7 +36,7 @@
         }
     }
     .hero-content {
-        min-height: calc(100vh - #{rem(300)});
+        min-height: calc(100vh - #{rem(320)});
         @media (max-width: 1200px) {
             min-height: 100%;
             .hero-text .bottom {
@@ -47,7 +47,7 @@
                 // border-radius: 30px;
                 margin-bottom: rem(40);
                 .img-cover:before {
-                    content: '';
+                    content: "";
                     padding-top: 88%;
                     display: block;
                 }
@@ -109,7 +109,7 @@
         }
     }
 }
-.home > section {
+.home-page > section {
     position: relative;
     z-index: 3;
 }
@@ -272,19 +272,19 @@
     .content {
         margin-top: rem(65);
     }
-    [class*=col] {
+    [class*="col"] {
         padding: rem(20);
         &:nth-child(1) .skill-card {
-            background-color: #0099AF;
+            background-color: #0099af;
         }
         &:nth-child(2) .skill-card {
-            background-color: #A778EE;
+            background-color: #a778ee;
         }
         &:nth-child(3) .skill-card {
-            background-color: #7E15C5;
+            background-color: #7e15c5;
         }
         &:nth-child(4) .skill-card {
-            background-color: #0E5F66;
+            background-color: #0e5f66;
         }
     }
     .skill-card {
@@ -301,16 +301,37 @@
         }
         .img-container {
             width: 50%;
+            @media (min-width: 992px) {
+                width: 100%;
+                position: absolute;
+                top: 0;
+                [dir="rtl"] & {
+                    left: 0;
+                }
+                [dir="ltr"] & {
+                    right: 0;
+                }
+                bottom: 0;
+                z-index: 0;
+                transition: width cubic-bezier(0.4, 0, 0, 1) 0.6s;
+            }
             img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
             }
         }
+        &:hover {
+            .img-container {
+                width: 50%;
+            }
+        }
         h4 {
             font-weight: $fontBold;
             font-size: rem(25);
             margin-bottom: rem(20);
+            position: relative;
+            z-index: 1;
         }
         ul {
             list-style: circle;
@@ -422,10 +443,13 @@
     }
     .text {
         padding: rem(75) rem(75) rem(95);
-        padding-inline-start: 0;
+        padding-inline-start: 30px;
         h2 {
             font-size: rem(55);
             margin-bottom: rem(20);
+        }
+        @media (min-width: 1750px) {
+            padding-inline-start: calc((100vw - 1760px) / 2);
         }
     }
     .btn-lg {

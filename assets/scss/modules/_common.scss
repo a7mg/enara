@@ -44,20 +44,17 @@ html {
     }
   }
   @media (max-width: 560px) {
-    font-size: 6px;
+    font-size: 9px;
   }
 }
 ::-webkit-scrollbar {
   width: 5px;
-  border-radius: rem(20);
 }
 ::-webkit-scrollbar-track {
   background-color: #ccc;
-  border-radius: rem(20);
 }
 ::-webkit-scrollbar-thumb {
-  background-color: $blue;
-  border-radius: rem(20);
+  background-color: $primary;
 }
 .container,
 .container-xxl {
@@ -319,7 +316,7 @@ button:focus {
 }
 .btn {
   border-radius: rem(50);
-  border: 1px solid $primary;
+  border: rem(2) solid $primary;
   color: $primary;
   font-size: rem(20);
   padding: rem(10) rem(35);
@@ -350,7 +347,7 @@ button:focus {
       background-color: $primary;
       margin-inline-start: rem(25);
       background: url(#{$imgPath}/icons/arrow-white-right.svg) no-repeat $primary center / #{rem(20)};
-      [dir=rtl] & {
+      [dir="rtl"] & {
         transform: rotate(180deg);
       }
     }
@@ -385,49 +382,6 @@ button:focus {
     &:after {
       transform: scaleX(1);
       transform-origin: left top;
-    }
-  }
-}
-.btn-arrow {
-  display: inline-block;
-  &.white {
-    div {
-      span {
-        color: $white !important;
-        border-color: #fff !important;
-      }
-      &:hover span {
-        color: $blue !important;
-      }
-    }
-  }
-  > div {
-    display: flex;
-    span {
-      color: $primary !important;
-      font-size: rem(19);
-      border-radius: rem(70);
-      padding: rem(15) rem(40);
-      border: 1px solid $primary !important;
-      transition: color ease 0.4s;
-    }
-    &:after {
-      content: "";
-      border-radius: rem(70);
-      width: rem(88);
-      border: 1px solid $primary;
-      background: url("#{$imgPath}/icons/white-arrow-right.svg") $primary no-repeat center / rem(37);
-      transition: all ease-in-out 0.2s;
-    }
-    &:hover {
-      span:after {
-        transform: scaleX(1);
-        transform-origin: left top;
-      }
-      &:after {
-        // border-color: #FFF;
-        background-position: center right rem(10);
-      }
     }
   }
 }
@@ -468,7 +422,7 @@ body .owl-carousel .owl-nav {
     border-radius: 50%;
     border: rem(2) solid #430664 !important;
     transition: background-color ease 0.2s;
-    [dir=rtl] & {
+    [dir="rtl"] & {
       transform: rotate(180deg);
     }
     &.disabled {
@@ -486,3 +440,13 @@ body .owl-carousel .owl-nav {
     }
   }
 }
+
+.page {
+  padding: rem(150) 0 rem(100);
+}
+// @media (min-width: 768px) {
+//   .offset-md-2 {
+//     margin-left: 0;
+//     margin-inline-start: 16.66666667%;
+//   }
+// }

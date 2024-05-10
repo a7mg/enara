@@ -21,36 +21,39 @@ $('#Who-use').owlCarousel({
     margin: 50,
     responsive: {
         0: {
-            items: 1.75,
+            items: 1,
             margin: 30
         },
         600: {
-            items: 2.5,
+            items: 2,
             margin: 40
         },
         1000: {
-            items: 3.5
+            items: 3
+        },
+        1400: {
+            items: 4
         }
     },
     navText
 });
 $('#parents-say').owlCarousel({
-    items: 2.2,
+    items: 2,
     nav: true,
     dots: false,
     autoplay: false,
     margin: 60,
     responsive: {
         0: {
-            items: 1.25,
+            items: 1,
             margin: 25
         },
         600: {
-            items: 1.5,
+            items: 1,
             margin: 25
         },
         1700: {
-            items: 2.2
+            items: 2
         }
     },
     navText

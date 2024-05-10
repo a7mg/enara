@@ -16,13 +16,14 @@ header {
     .header-wrapper {
         padding: rem(60);
         transition: all 0.6s cubic-bezier(0.4, 0, 0, 1);
+        display: flex;
+        align-items: center;
         .logo-container {
             a {
                 display: block;
             }
             img {
-                height: rem(192);
-                margin: rem(-70) rem(-40);
+                height: rem(45);
                 transition: all 0.6s cubic-bezier(0.4, 0, 0, 1);
             }
         }
@@ -34,8 +35,13 @@ header {
     .btn-primary {
         margin-inline-start: rem(10);
     }
+    .lang-btn {
+        [dir="ltr"] & {
+            padding-top: rem(5);
+        }
+    }
     .nav-btn {
-        padding: rem(19) rem(15);
+        padding: 0 rem(15);
         border: 0;
         background-color: $white;
         width: rem(52);
@@ -50,11 +56,12 @@ header {
         }
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
         > i {
             display: block;
             width: 100%;
             height: 2px;
+            margin: rem(2.5) auto;
             background-color: $primary;
             transition: all linear 0.2s;
         }
@@ -64,7 +71,15 @@ header {
             padding-top: rem(10);
             padding-bottom: rem(10);
             background-color: rgba(#494949, 0.4);
+            .logo-container img {
+                height: rem(30);
+            }
         }
+    }
+
+    &:not(.home-header) {
+        position: sticky;
+        background: url(#{$imgPath}/hero-bg.jpg) no-repeat center / cover;
     }
 }
 footer {
@@ -80,7 +95,8 @@ footer {
     }
     .logo {
         img {
-            margin: rem(-80) rem(-70);
+            max-height: rem(70);
+            // margin: rem(-80) rem(-70);
             // max-height: rem(135);
         }
     }
@@ -136,7 +152,7 @@ menu {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     display: none;
     .menu-sheet {
         position: relative;
@@ -290,21 +306,17 @@ menu {
     opacity: 0;
     visibility: hidden;
     position: fixed;
-    bottom: 20px;
-    right: 30px;
+    bottom: rem(20);
+    right: rem(30);
     z-index: 99;
-    font-size: rem(18);
     border: none;
     outline: none;
     transition: all ease 0.3s;
-    // background-color: $darkBlue;
-    // color: $white-f;
     cursor: pointer;
-    padding: 15px;
+    padding: rem(30);
     border-radius: 50%;
-    animation: shimmy 2s infinite;
-    animation-direction: alternate-reverse;
-
+    background: url(#{$imgPath}/icons/arrow-white-right.svg) no-repeat $primary center / #{rem(20)};
+    transform: rotate(-90deg);
     &.show {
         opacity: 1;
         visibility: visible;
