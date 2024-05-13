@@ -44,16 +44,27 @@ $('#parents-say').owlCarousel({
     autoplay: false,
     margin: 60,
     responsive: {
+        // 0: {
+        //     items: 1.25,
+        //     margin: 25
+        // },
+        // 600: {
+        //     items: 1.5,
+        //     margin: 25
+        // },
+        // 1700: {
+        //     items: 2.2
+        // }
         0: {
-            items: 1.25,
+            items: 2,
             margin: 25
         },
         600: {
-            items: 1.5,
+            items: 2,
             margin: 25
         },
         1700: {
-            items: 2.2
+            items: 2
         }
     },
     navText

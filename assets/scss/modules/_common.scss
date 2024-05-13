@@ -138,10 +138,23 @@ button:focus {
   bottom: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   z-index: 10006;
-  background: #fff;
+  background: #333;
+  background: url(#{$imgPath}/hero-bg.jpg) no-repeat center / cover;
   cursor: auto;
+
+  &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      content: "";
+      opacity: 0.85;
+      background-color: #5c5c5c;
+      z-index: 1;
+  }
 
   * {
     cursor: auto;
@@ -200,6 +213,7 @@ button:focus {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 30%;
+    z-index: 2;
   }
   > img {
     max-width: 300px;

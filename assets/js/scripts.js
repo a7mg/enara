@@ -14,6 +14,10 @@ $(window)
             $(".backtop").removeClass('show');
         }
     })
+setTimeout(() => {
+    pageLoaded();
+    headerFixed();
+}, 4000);
 /*********************************************/
 /*********************************************/
 $(document)
@@ -52,7 +56,7 @@ $(document)
             $('body').removeClass('menu-opened');
         }, 350);
     })
-    .on('click', '.lang-btn', function() {
+    .on('click', '.lang-btn', function () {
         let lang = $('html').attr('lang');
         if (lang == 'en') {
             $(this).text('En');
@@ -69,7 +73,7 @@ function initAos() {
     AOS.init({
         easing: "ease-in-out-sine",
         offset: 0, //($(window).height() * 0.05),
-        once: false,
+        once: true,
         delay: 200,
         // duration: 1e3,
         duration: 700
