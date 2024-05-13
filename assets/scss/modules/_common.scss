@@ -44,7 +44,7 @@ html {
     }
   }
   @media (max-width: 560px) {
-    font-size: 9px;
+    font-size: 8px;
   }
 }
 ::-webkit-scrollbar {
@@ -441,9 +441,6 @@ body .owl-carousel .owl-nav {
   }
 }
 
-.page {
-  padding: rem(150) 0 rem(100);
-}
 // @media (min-width: 768px) {
 //   .offset-md-2 {
 //     margin-left: 0;

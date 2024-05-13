@@ -1,6 +1,20 @@
+.page {
+    padding: rem(150) 0 rem(100);
+    p {
+        font-size: rem(25);
+        line-height: rem(35);
+    }
+    .intro {
+        padding-bottom: rem(200);
+        p {
+            margin-top: rem(150);
+        }
+    }
+}
 .contact-page {
     font-size: rem(17);
     .sub-title {
+        font-size: rem(17);
         line-height: rem(25);
         margin: rem(70) 0 rem(40);
     }
@@ -57,7 +71,7 @@
         section {
             padding: rem(100) 0;
             &:nth-child(odd) {
-                background-color: #F5F5F5;
+                background-color: #f5f5f5;
             }
             &:nth-child(even) {
                 .row {
@@ -84,6 +98,34 @@
                     border-radius: rem(75);
                 }
             }
+        }
+    }
+}
+
+.products-page {
+    padding-bottom: 0;
+    .content {
+        background-color: #F5F5F5;
+        padding: rem(200) 0 0;
+        .container {
+            width: rem(1400);
+            max-width: 100%;
+        }
+    }
+    .item {
+        padding-bottom: rem(250);
+        
+        .img-container {
+            img {
+                width: rem(350);
+                max-height: rem(340);
+                max-width: 100%;
+            }
+        }
+        h4 {
+            font-size: rem(35);
+            line-height: rem(50);
+            margin-bottom: rem(40);
         }
     }
 }

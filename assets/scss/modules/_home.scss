@@ -149,6 +149,9 @@
         .row > [class*="col"] {
             // margin-bottom: rem(30);
             padding: rem(28);
+            @media (max-width: 767px) {
+                padding: rem(15);
+            }
         }
         .why-card {
             padding: rem(105) rem(68);
@@ -178,6 +181,17 @@
                 margin: 0;
                 margin-top: auto;
                 font-size: rem(17);
+            }
+            @media (max-width: 767px) {
+                padding: rem(60) rem(40);
+                h3 {
+                    font-size: rem(25);
+                    line-height: rem(30);
+                    margin-bottom: rem(30);
+                }
+                p {
+                    font-size: rem(20);
+                }
             }
         }
     }

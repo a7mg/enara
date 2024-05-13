@@ -45,15 +45,15 @@ $('#parents-say').owlCarousel({
     margin: 60,
     responsive: {
         0: {
-            items: 1,
+            items: 1.25,
             margin: 25
         },
         600: {
-            items: 1,
+            items: 1.5,
             margin: 25
         },
         1700: {
-            items: 2
+            items: 2.2
         }
     },
     navText
