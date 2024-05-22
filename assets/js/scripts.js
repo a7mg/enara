@@ -17,7 +17,7 @@ $(window)
 setTimeout(() => {
     pageLoaded();
     headerFixed();
-}, 4000);
+}, 1000);
 /*********************************************/
 /*********************************************/
 $(document)
@@ -76,12 +76,11 @@ function initAos() {
     });
 }
 function pageLoaded() {
-    $('.page').css('margin-top', $('header').outerHeight());
+    $('.page').css('padding-top', $('header').outerHeight());
     $('#loading').fadeOut(function () {
-        if ($(window).width() > 992) {
-        }
-        initAos();
+        
     })
+    animation();
 }
 function headerFixed(position = $(window).scrollTop()) {
     if (position > 100) {
@@ -90,4 +89,15 @@ function headerFixed(position = $(window).scrollTop()) {
     } else {
         $('header').removeClass('fixed');
     }
+}
+function animation() {
+    initAos();
+    if ($('.faq').length) return;
+    gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+    ScrollTrigger.normalizeScroll(true);
+    let smoother = ScrollSmoother.create({
+        smooth: 2,
+        effects: true,
+        normalizeScroll: true
+    });
 }
