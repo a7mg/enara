@@ -34,14 +34,6 @@ $(document)
         $('html, body').animate({
             scrollTop: 0
         });
-        return;
-        if ($(window).width() > 992) {
-            $('body').getNiceScroll().doScrollPos(0, 0);
-        } else {
-            $('html, body').animate({
-                scrollTop: 0
-            });
-        }
     })
     .on('click', '.nav-btn', function () {
         $('menu .aos-init').removeClass('aos-animate');
@@ -65,6 +57,10 @@ $(document)
             $(this).text('عربي');
             $('html').attr('dir', 'ltr').attr('lang', 'en');
         }
+    })
+    .on('click', '.acc-item .head', function() {
+        $(this).parent().toggleClass('active');
+        $(this).siblings('.acc-content').slideToggle();
     })
 /*********************************************
  * FUNCTIONS

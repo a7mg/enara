@@ -56,7 +56,7 @@ $('#parents-say').owlCarousel({
         //     items: 2.2
         // }
         0: {
-            items: 2,
+            items: 1,
             margin: 25
         },
         600: {

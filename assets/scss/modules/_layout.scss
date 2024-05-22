@@ -18,6 +18,10 @@ header {
         transition: all 0.6s cubic-bezier(0.4, 0, 0, 1);
         display: flex;
         align-items: center;
+        max-width: 93%;
+        @media (max-width: 1200px) {
+            max-width: 100%;
+        }
         .logo-container {
             a {
                 display: block;
@@ -67,10 +71,10 @@ header {
         }
     }
     &.fixed {
+        background-color: rgba(#494949, 0.4);
         .header-wrapper {
             padding-top: rem(10);
             padding-bottom: rem(10);
-            background-color: rgba(#494949, 0.4);
             .logo-container img {
                 height: rem(30);
             }
@@ -136,8 +140,8 @@ body {
     }
     &.menu-opened {
         .main-wrapper > * {
-            opacity: 0.2;
-            transform: scale(0.95);
+            // opacity: 0.2;
+            // transform: scale(0.95);
         }
         menu {
             display: block;
@@ -167,6 +171,11 @@ menu {
             overflow: hidden;
             display: flex;
             flex-direction: column;
+            max-width: 93%;
+            margin: auto;
+            @media (max-width: 1200px) {
+                max-width: 100%;
+            }
         }
     }
     .menu-header {
