@@ -82,7 +82,7 @@ header {
     }
 
     &:not(.home-header) {
-        position: sticky;
+        // position: sticky;
         background: url(#{$imgPath}/hero-bg.jpg) no-repeat center / cover;
     }
 }

@@ -76,18 +76,9 @@ function initAos() {
     });
 }
 function pageLoaded() {
+    $('.page').css('margin-top', $('header').outerHeight());
     $('#loading').fadeOut(function () {
         if ($(window).width() > 992) {
-            // $("body").niceScroll({
-            //     background: "#EEE",
-            //     cursorcolor: "#801BC5",
-            //     cursorborder: "0",
-            //     cursorborderradius: "0",
-            //     cursorwidth: "8px",
-            //     scrollspeed: 80,
-            //     zindex: 999,
-            //     autohidemode: false
-            // });
         }
         initAos();
     })
