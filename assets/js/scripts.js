@@ -62,6 +62,10 @@ $(document)
         $(this).parent().toggleClass('active');
         $(this).siblings('.acc-content').slideToggle();
     })
+    .on('click', '.blog-list-wrapper .filters button', function () {
+        $(this).siblings().removeClass('selected');
+        $(this).addClass('selected');
+    })
 /*********************************************
  * FUNCTIONS
 /*********************************************/
@@ -93,11 +97,11 @@ function headerFixed(position = $(window).scrollTop()) {
 function animation() {
     initAos();
     if ($('.faq').length) return;
-    gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-    ScrollTrigger.normalizeScroll(true);
-    let smoother = ScrollSmoother.create({
-        smooth: 2,
-        effects: true,
-        normalizeScroll: true
-    });
+    // gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+    // ScrollTrigger.normalizeScroll(true);
+    // let smoother = ScrollSmoother.create({
+    //     smooth: 2,
+    //     effects: true,
+    //     normalizeScroll: true
+    // });
 }

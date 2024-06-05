@@ -14,6 +14,8 @@ header {
     width: 100%;
     z-index: 999;
     .header-wrapper {
+        position: relative;
+        z-index: 1;
         padding: rem(60);
         transition: all 0.6s cubic-bezier(0.4, 0, 0, 1);
         display: flex;
@@ -42,6 +44,9 @@ header {
     .lang-btn {
         [dir="ltr"] & {
             padding-top: rem(5);
+        }
+        @media (max-width: 767px) {
+            display: none;
         }
     }
     .nav-btn {
@@ -84,6 +89,16 @@ header {
     &:not(.home-header) {
         // position: sticky;
         background: url(#{$imgPath}/hero-bg.jpg) no-repeat center / cover;
+        &:after {
+            content: "";
+            background-color: rgba(#000, 0.2);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
     }
 }
 footer {
@@ -238,6 +253,11 @@ menu {
                         color: $lightGreen;
                     }
                 }
+            }
+        }
+        .lang-btn {
+            @media (min-width: 767px) {
+                display: none;
             }
         }
     }

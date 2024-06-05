@@ -90,7 +90,12 @@ $('#awards-slider').owlCarousel({
         }
     }
 });
-
+$('.blog-slider').owlCarousel({
+    items: 1,
+    nav: true,
+    dots: false,
+    navText
+});
 
 var heroHomeCarousel = $('.hero-slider')
     .on('change.owl.carousel', function (e) {
