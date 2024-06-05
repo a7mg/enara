@@ -45,6 +45,8 @@ header {
         [dir="ltr"] & {
             padding-top: rem(5);
         }
+    }
+    .desktop-vr {
         @media (max-width: 767px) {
             display: none;
         }
@@ -255,7 +257,7 @@ menu {
                 }
             }
         }
-        .lang-btn {
+        .mobile-vr {
             @media (min-width: 767px) {
                 display: none;
             }
