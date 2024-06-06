@@ -30,7 +30,6 @@ $(document)
         }
     })
 function openMenu(menu) {
-    console.log(menu);
     $(menu).find('.aos-init').removeClass('aos-animate');
     $('body').addClass('menu-opened');
     $(menu).addClass('active');

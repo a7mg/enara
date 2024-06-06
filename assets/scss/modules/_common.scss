@@ -341,6 +341,7 @@ button:focus {
   font-size: rem(20);
   padding: rem(10) rem(35);
   background-color: transparent;
+  text-transform: capitalize;
   &.btn-primary {
     color: $white;
     background-color: $primary;
