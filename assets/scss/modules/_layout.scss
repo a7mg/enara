@@ -46,11 +46,6 @@ header {
             padding-top: rem(5);
         }
     }
-    .desktop-vr {
-        @media (max-width: 767px) {
-            display: none;
-        }
-    }
     .nav-btn {
         padding: 0 rem(15);
         border: 0;
@@ -160,7 +155,7 @@ body {
             // opacity: 0.2;
             // transform: scale(0.95);
         }
-        menu {
+        menu.active {
             display: block;
         }
     }
@@ -257,9 +252,21 @@ menu {
                 }
             }
         }
-        .mobile-vr {
-            @media (min-width: 767px) {
-                display: none;
+        .lang-btn {
+            font-size: rem(30);
+        }
+    }
+    .btns {
+        width: rem(500);
+        max-width: 100%;
+        margin: auto;
+        button.btn-primary {
+            font-size: rem(30);
+            display: block;
+            width: 100%;
+            margin: rem(20) 0;
+            &:hover {
+                border-color: $primary;
             }
         }
     }
@@ -355,5 +362,16 @@ menu {
     &:hover {
         // background-color: $lightBlue;
         // color: $darkBlue;
+    }
+}
+
+.mobile-vr {
+    @media (min-width: 767px) {
+        display: none;
+    }
+}
+.desktop-vr {
+    @media (max-width: 767px) {
+        display: none;
     }
 }
