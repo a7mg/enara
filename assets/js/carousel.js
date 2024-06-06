@@ -1,3 +1,4 @@
+var lang = localStorage.getItem('language') || 'en';
 var navText = [`<svg xmlns="http://www.w3.org/2000/svg" width="32.73" height="32.73" viewBox="0 0 32.73 32.73">
 <g id="Group_38732" data-name="Group 38732" transform="translate(16.555 30.73) rotate(-135)">
 <path id="Path_7553" data-name="Path 7553" d="M0,20.047,20.584,0" transform="translate(0 0)" fill="none" stroke="#430664" stroke-linecap="round" stroke-width="2"/>
@@ -19,6 +20,7 @@ $('#Who-use').owlCarousel({
     dots: false,
     autoplay: false,
     margin: 50,
+    rtl: lang == 'ar',
     responsive: {
         0: {
             items: 1,
@@ -43,6 +45,7 @@ $('#parents-say').owlCarousel({
     dots: false,
     autoplay: false,
     margin: 60,
+    rtl: lang == 'ar',
     responsive: {
         // 0: {
         //     items: 1.25,
@@ -76,6 +79,7 @@ $('#awards-slider').owlCarousel({
     autoplay: true,
     loop: true,
     margin: 60,
+    rtl: lang == 'ar',
     responsive: {
         0: {
             items: 2,
@@ -94,6 +98,7 @@ $('.blog-slider').owlCarousel({
     items: 1,
     nav: true,
     dots: false,
+    rtl: lang == 'ar',
     navText
 });
 

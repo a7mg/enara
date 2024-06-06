@@ -28,6 +28,11 @@ $(document)
         if ($('.home-page').length) {
             $('header').addClass('home-header');
         }
+        var lang = localStorage.getItem('language') || 'en';
+        $('html').attr('dir', lang == 'en' ? 'ltr' : 'rtl').attr('lang', lang);
+        setTimeout(() => {
+            $('.lang-btn').text(lang == 'ar' ? 'En' : 'عربي');
+        }, 100);
     })
 function openMenu(menu) {
     $(menu).find('.aos-init').removeClass('aos-animate');
@@ -59,12 +64,15 @@ $(document)
     .on('click', '.lang-btn', function () {
         let lang = $('html').attr('lang');
         if (lang == 'en') {
-            $(this).text('En');
-            $('html').attr('dir', 'rtl').attr('lang', 'ar');
+            // $(this).text('En');
+            // $('html').attr('dir', 'rtl').attr('lang', 'ar');
+            localStorage.setItem('language', 'ar');
         } else {
-            $(this).text('عربي');
-            $('html').attr('dir', 'ltr').attr('lang', 'en');
+            // $(this).text('عربي');
+            // $('html').attr('dir', 'ltr').attr('lang', 'en');
+            localStorage.setItem('language', 'en');
         }
+        location.reload();
     })
     .on('click', '.acc-item .head', function () {
         $(this).parent().toggleClass('active');
