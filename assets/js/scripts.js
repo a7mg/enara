@@ -121,3 +121,12 @@ function animation() {
     //     normalizeScroll: true
     // });
 }
+
+if ($('#gallery-container').length) {
+    lightGallery(document.getElementById("gallery-container"), {
+        //   speed: 500,
+        toggleThumb: true,
+        thumbnail: true,
+        plugins: [lgVideo, lgThumbnail],
+    });
+}

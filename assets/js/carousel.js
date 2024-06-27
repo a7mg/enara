@@ -152,3 +152,42 @@ function checkClasses(ele) {
         }
     });
 }
+
+
+/******************************
+ * Media Gallery
+ ******************************/
+let mediaGallery = $('#media-gallery');
+mediaGallery.on('initialized.owl.carousel', function (event) {
+    const container = document.querySelector('#media-gallery .owl-stage');
+    window.lightGallery(container, {
+        //   speed: 500,
+        toggleThumb: true,
+        thumbnail: true,
+        plugins: [lgVideo, lgThumbnail],
+        selector: '.item',
+    });
+});
+mediaGallery.owlCarousel({
+    items: 3,
+    // loop: true,
+    nav: true,
+    dots: false,
+    autoplay: false,
+    margin: 50,
+    rtl: lang == 'ar',
+    responsive: {
+        0: {
+            items: 1,
+            margin: 30
+        },
+        600: {
+            items: 2,
+            margin: 40
+        },
+        1000: {
+            items: 3
+        }
+    },
+    navText
+});
