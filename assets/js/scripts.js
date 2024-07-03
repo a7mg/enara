@@ -130,3 +130,11 @@ if ($('#gallery-container').length) {
         plugins: [lgVideo, lgThumbnail],
     });
 }
+if ($('#media-gallery').length) {
+    lightGallery(document.getElementById("media-gallery"), {
+        //   speed: 500,
+        toggleThumb: true,
+        thumbnail: true,
+        plugins: [lgVideo, lgThumbnail],
+    });
+}

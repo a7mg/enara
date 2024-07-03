@@ -76,6 +76,7 @@
             }
         }
         .bottom {
+            display: none;
             margin-top: rem(50);
             h4 {
                 font-size: rem(30);
@@ -172,6 +173,7 @@
             display: flex;
             flex-direction: column;
             height: 100%;
+            color: $black;
             &:hover {
                 border-color: $primary;
             }
