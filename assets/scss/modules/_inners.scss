@@ -259,10 +259,23 @@
     .slider-item {
         .image-container {
             height: 100%;
+            display: block;
+            position: relative;
+            &:before {
+                content: "";
+                padding: 30% 50%;
+                display: block;
+            }
             img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
+                margin: auto;
             }
         }
         .content {
@@ -270,6 +283,9 @@
             flex-direction: column;
             padding: rem(200) rem(85);
             padding-inline-end: rem(140);
+            @media (max-width: 1200px) {
+                padding: rem(100) rem(40) rem(200);
+            }
             > div {
                 width: 100%;
                 margin: auto;
