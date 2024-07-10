@@ -23,8 +23,12 @@ $imgPath: "../../images";
 
 
 /////////////////////////////////////////////
-$default-behaviour: false; //  true or false
+$default-behaviour: true; //  true or false
 
+@font-face {
+    font-family: 'Rubik';
+    src: url(../../Rubik-VariableFont_wght.ttf);
+}
 //== font-families
 //
 // font family
@@ -33,7 +37,7 @@ $font-numbers-default: 'Poppins', sans-serif;
 $fonts-map-default: (
 );
 // font family
-$font-family-reverse: 'Poppins', sans-serif;
-$font-numbers-reverse: 'Poppins', sans-serif;
+$font-family-reverse: 'Rubik', sans-serif;
+$font-numbers-reverse: 'Rubik', sans-serif;
 $fonts-map-reverse: (
 );
