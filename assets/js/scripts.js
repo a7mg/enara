@@ -22,9 +22,11 @@ setTimeout(() => {
 /*********************************************/
 $(document)
     .ready(function () {
-        $("menu").load("partial/menu.html");
-        $("header").load("partial/header.html");
-        $(".footer-section").load("partial/footer.html");
+        if (location.href.includes('127.0.0.1')) {
+            $("menu").load("partial/menu.html");
+            $("header").load("partial/header.html");
+            $(".footer-section").load("partial/footer.html");
+        }
         if ($('.home-page').length) {
             $('header').addClass('home-header');
         }

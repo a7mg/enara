@@ -358,6 +358,7 @@ button:focus {
   padding: rem(10) rem(35);
   background-color: transparent;
   text-transform: capitalize;
+  white-space: nowrap;
   &.btn-primary {
     color: $white;
     background-color: $primary;
@@ -380,6 +381,7 @@ button:focus {
       content: "";
       width: rem(47);
       height: rem(47);
+      min-width: rem(47);
       border-radius: 50%;
       background-color: $primary;
       margin-inline-start: rem(25);
@@ -484,3 +486,8 @@ body .owl-carousel .owl-nav {
 //     margin-inline-start: 16.66666667%;
 //   }
 // }
+
+.lg-media-cont.lg-has-iframe {
+  max-width: 80% !important;
+  max-height: 80% !important;
+}
