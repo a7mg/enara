@@ -1,0 +1,80 @@
+<!doctype html>
+<html id="html" lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Enara - Media Details</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="assets/images/fav.svg">
+  <link rel="stylesheet" href="assets/css/libs/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/libs/aos@2.3.1.css">
+  <link rel="stylesheet" href="assets/css/libs/owl.carousel.min.css">
+  <link rel="stylesheet" href="assets/css/en/style.css">
+</head>
+
+<body>
+
+  <div class="preloading" id="loading">
+    <img src="./assets/images/logo.png" alt="" />
+  </div>
+  <button class="backtop" title="Back to top"></button>
+
+  <header></header>
+  <menu></menu>
+
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+
+      <div class="blog-details page">
+
+        <div class="page-container container">
+
+          <div class="anim-wrap mb-5">
+            <h1 data-aos="fade-up" data-aos-delay="300" class="title mb-0">{{ $model->title }}</h1>
+          </div>
+
+          <div id="media-gallery">
+            <div class="image-container" data-src="{{ image($model->image) }}">
+              <img data-aos="zoom-out" data-aos-delay="400" src="{{ image($model->image) }}"
+                alt="{{ alt($model->image) }}">
+            </div>
+          </div>
+
+          @php
+          $is_video = $model->video != '';
+          @endphp
+
+          @if ($is_video)
+          <div class="image-container media-container" data-aos="fade-up" data-aos-delay="500">
+            {!! $model->video !!}
+          </div>
+          @endif
+
+
+
+          <article class="anim-wrap mt-5">
+            <p data-aos="fade-up" data-aos-delay="500">
+              {!! $model->description !!}
+            </p>
+          </article>
+        </div>
+
+      </div>
+
+
+      <div class="footer-section"></div>
+    </div>
+  </div>
+
+  <script src="assets/js/libs/aos@2.3.1.js"></script>
+  <script src="assets/js/libs/jquery.min.3.3.1.js"></script>
+
+  <!-- <script src="assets/js/libs/gsap.min.js"></script>
+  <script src="assets/js/libs/scrollTrigger.min.js"></script>
+  <script src="assets/js/libs/ScrollSmoother.min.js"></script> -->
+
+  <script src="assets/js/libs/owl.carousel.min.js"></script>
+  <script src="assets/js/carousel.js"></script>
+
+  <script src="assets/js/scripts.js"></script>
+</body>
