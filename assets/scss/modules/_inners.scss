@@ -407,10 +407,34 @@
         max-width: 100%;
         .image-container {
             border-radius: rem(70);
+            position: relative;
             overflow: hidden;
-            img {
-                width: 100%;
+            display: block;
+            cursor: pointer;
+            margin-top: rem(70);
+            &:before {
+                content: "";
+                padding: 30% 50%;
+                display: block;
             }
+            > * {
+                transition: all ease-in-out 0.3s;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                margin: auto;
+                + div {
+                    display: none;
+                }
+            }
+        }
+        .media-container {
+            border-radius: 0;
         }
         .image-alt {
             font-size: rem(17);
@@ -483,35 +507,43 @@
             .image-container {
                 margin: rem(80) 0 0;
             }
-            ul {
-                margin: rem(100) 0;
-                li {
-                    & + li {
-                        margin-top: rem(50);
-                    }
-                    display: flex;
+            .special-point {
+                
+                ul {
+                    margin: rem(100) 0;
+                    padding: 0;
+                    li {
+                        & + li {
+                            margin-top: rem(50);
+                        }
+                        display: flex;
 
-                    &:before {
-                        content: attr(index);
-                        width: rem(60);
-                        min-width: rem(60);
-                        height: rem(60);
-                        border-radius: 50%;
-                        color: #7e16c5;
-                        border: 1px solid #7e16c5;
-                        margin-inline-end: rem(35);
-                        line-height: rem(60);
-                        text-align: center;
-                        font-size: rem(30);
-                        font-weight: $fontSemiBold;
+                        &::before {
+                            width: rem(60);
+                            min-width: rem(60);
+                            height: rem(60);
+                            border-radius: 50%;
+                            color: #7e16c5;
+                            border: 1px solid #7e16c5;
+                            margin-inline-end: rem(35);
+                            line-height: rem(60);
+                            text-align: center;
+                            font-size: rem(30);
+                            font-weight: $fontSemiBold;
+                        }
+                        @for $i from 1 through 10 {
+                            &:nth-child(#{$i}):before {
+                                content: '#{$i}';
+                            }
+                        }
                     }
-                }
-                h6 {
-                    font-size: rem(23);
-                    margin-bottom: rem(15);
-                }
-                div {
-                    font-size: rem(18);
+                    h6 {
+                        font-size: rem(23);
+                        margin-bottom: rem(15);
+                    }
+                    div {
+                        font-size: rem(18);
+                    }
                 }
             }
         }
