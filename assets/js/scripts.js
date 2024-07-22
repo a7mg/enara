@@ -98,7 +98,7 @@ function initAos() {
     });
 }
 function pageLoaded() {
-    $('.page').css('padding-top', $('header').outerHeight());
+    // $('.page').css('padding-top', $('header').outerHeight());
     $('#loading').fadeOut(function () {
 
     })

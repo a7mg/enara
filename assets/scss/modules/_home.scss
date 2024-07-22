@@ -364,6 +364,12 @@
             line-height: rem(25);
             margin-bottom: rem(60);
             padding-inline-start: rem(30);
+            li {
+                padding: 0;
+                &::marker {
+                    color: #FFF;
+                }
+            }
         }
         .btn-container {
             margin-top: auto;
@@ -478,10 +484,10 @@
             margin-bottom: rem(20);
         }
         @media (min-width: 1750px) {
-            padding-inline-start: calc((100vw - #{$mainContainerWidth}) / 2);
+            padding-inline-start: calc((100vw - 88%) / 2);
         }
         @media (max-width: 1750px) and (min-width: 1200px) {
-          padding-inline-start: 8vw;
+          padding-inline-start: 7vw;
         }
     }
     .btn-lg {
