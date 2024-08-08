@@ -76,6 +76,11 @@ $(document)
         }
         location.reload();
     })
+    .on('click', '.hero-content .play', function () {
+        var video = $(this).closest('.hero-content').find('video');
+        video.get(0).play();
+        $(this).parent().addClass('playing')
+    })
     .on('click', '.acc-item .head', function () {
         $(this).parent().toggleClass('active');
         $(this).siblings('.acc-content').slideToggle();
@@ -84,6 +89,12 @@ $(document)
         $(this).siblings().removeClass('selected');
         $(this).addClass('selected');
     })
+
+const video = document.querySelector(".hero-content video");
+
+video.addEventListener("pause", (event) => {
+    $('.media-container').removeClass('playing');
+});
 /*********************************************
  * FUNCTIONS
 /*********************************************/

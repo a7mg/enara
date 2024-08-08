@@ -37,6 +37,39 @@
     }
     .hero-content {
         min-height: calc(100vh - #{rem(320)});
+        .img-cover {
+            img {
+                opacity: 1;
+                visibility: visible;
+                transition: all ease 0.5s;
+            }
+            video {
+                display: block;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                visibility: hidden;
+                transition: all ease 0.5s;
+                background-color: #000;
+            }
+        }
+        .playing {
+            img {
+                opacity: 0.2;
+                // visibility: hidden;
+            }
+            video {
+                transition: all ease 0.5s;
+                opacity: 1;
+                visibility: visible;
+            }
+            .play {
+                display: none;
+            }
+        }
         @media (max-width: 1200px) {
             min-height: 100%;
             .hero-text .bottom {
@@ -48,7 +81,7 @@
                 margin-bottom: rem(40);
                 .img-cover:before {
                     content: "";
-                    padding-top: 88%;
+                    padding-top: 65%;
                     display: block;
                 }
             }
@@ -367,7 +400,7 @@
             li {
                 padding: 0;
                 &::marker {
-                    color: #FFF;
+                    color: #fff;
                 }
             }
         }
@@ -487,7 +520,7 @@
             padding-inline-start: calc((100vw - 88%) / 2);
         }
         @media (max-width: 1750px) and (min-width: 1200px) {
-          padding-inline-start: 7vw;
+            padding-inline-start: 7vw;
         }
     }
     .btn-lg {
@@ -532,6 +565,16 @@
         }
         &.sign {
             background-color: #cb95ff;
+            img {
+                [dir="rtl"] & {
+                    transform: scaleX(-1);
+                }
+            }
         }
+    }
+}
+.text-end {
+    [dir="rtl"] & {
+        text-align: left !important;
     }
 }
