@@ -17,11 +17,12 @@ $(window)
 setTimeout(() => {
     pageLoaded();
     headerFixed();
-}, 1000);
+}, 3000);
 /*********************************************/
 /*********************************************/
 $(document)
     .ready(function () {
+        animation();
         if (location.href.includes('127.0.0.1')) {
             $("menu").load("partial/menu.html");
             $("header").load("partial/header.html");
@@ -56,11 +57,11 @@ $(document)
     .on('click', '.login-btn', function () {
         openMenu('header  menu');
     })
-    .on('click', 'menu .close, menu .overlay', function () {
-        $('menu .aos-init').removeClass('aos-animate');
+    .on('click', 'menu .close, .popup .close, menu .overlay', function () {
+        $('menu, .popup').find('.aos-init').removeClass('aos-animate');
         setTimeout(() => {
             $('body').removeClass('menu-opened');
-            $('menu').removeClass('active');
+            $('menu, .popup').removeClass('active');
         }, 350);
     })
     .on('click', '.lang-btn', function () {
@@ -77,9 +78,10 @@ $(document)
         location.reload();
     })
     .on('click', '.hero-content .play', function () {
-        var video = $(this).closest('.hero-content').find('video');
-        video.get(0).play();
-        $(this).parent().addClass('playing')
+        // var video = $(this).closest('.hero-content').find('video');
+        // video.get(0).play();
+        // $(this).parent().addClass('playing')
+        openMenu('.popup');
     })
     .on('click', '.acc-item .head', function () {
         $(this).parent().toggleClass('active');
@@ -113,7 +115,6 @@ function pageLoaded() {
     $('#loading').fadeOut(function () {
 
     })
-    animation();
 }
 function headerFixed(position = $(window).scrollTop()) {
     if (position > 100) {
