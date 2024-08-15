@@ -28,8 +28,8 @@ $(document)
             $("header").load("partial/header.html");
             $(".footer-section").load("partial/footer.html");
         }
-        if ($('.home-page').length) {
-            $('header').addClass('home-header');
+        if (!$('.home-page').length) {
+            $('header').removeClass('home-header');
         }
         var lang = localStorage.getItem('language') || 'en';
         $('html').attr('dir', lang == 'en' ? 'ltr' : 'rtl').attr('lang', lang);
@@ -59,6 +59,7 @@ $(document)
     })
     .on('click', 'menu .close, .popup .close, menu .overlay', function () {
         $('menu, .popup').find('.aos-init').removeClass('aos-animate');
+        $('.popup iframe').attr('src', $('.popup iframe').attr('src'));
         setTimeout(() => {
             $('body').removeClass('menu-opened');
             $('menu, .popup').removeClass('active');
