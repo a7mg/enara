@@ -302,7 +302,7 @@ menu,
     }
     .pop-container {
         @media (max-width: 767px) {
-            padding: 0;
+            padding: rem(30);
         }
     }
     .pop-content {
@@ -313,16 +313,27 @@ menu,
                 // width: 1200px;
                 max-width: 100%;
                 margin: auto;
-                width: 830px;
-                height: 468px;
-                @media (max-width: 767px) {
-                    width: calc(100% - 40px);
-                    height: calc(56.25vw - 22.5px);
-                }
+
+                padding-bottom: 56.25%;
                 iframe {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
                     width: 100%;
                     height: 100%;
                 }
+
+                @media (min-width: 767px) {
+                    max-width: 80%;
+                    padding-bottom: 45%;
+                }
+
+                // width: 830px;
+                // height: 468px;
+                // @media (max-width: 767px) {
+                //     width: calc(100% - 40px);
+                //     height: calc(56.25vw - 22.5px);
+                // }
                 // @media (min-width: 1200px) {
                 //     width: 95%;
                 // }
