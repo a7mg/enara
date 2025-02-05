@@ -145,6 +145,42 @@ $(document)
         $(this).addClass('selected');
     })
 
+$(document).ready(function () {
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+    const slider = $(".blog-list-wrapper .filters");
+
+    function startDrag(e) {
+        isDown = true;
+        slider.css("cursor", "grabbing");
+        startX = e.pageX || e.originalEvent.touches[0].pageX;
+        scrollLeft = slider.scrollLeft();
+    }
+
+    function moveDrag(e) {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX || e.originalEvent.touches[0].pageX;
+        const walk = (x - startX) * 2; // Adjust scroll speed
+        slider.scrollLeft(scrollLeft - walk);
+    }
+
+    function stopDrag() {
+        isDown = false;
+        slider.css("cursor", "grab");
+    }
+
+    // Mouse Events
+    slider.mousedown(startDrag);
+    $(document).mousemove(moveDrag);
+    $(document).mouseup(stopDrag);
+
+    // Touch Events (For Mobile)
+    slider.on("touchstart", startDrag);
+    slider.on("touchmove", moveDrag);
+    slider.on("touchend", stopDrag);
+});
 // const video = document.querySelector(".hero-content video");
 
 // video.addEventListener("pause", (event) => {
